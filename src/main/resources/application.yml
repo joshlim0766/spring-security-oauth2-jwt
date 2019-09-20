@@ -1,0 +1,39 @@
+server:
+  port: 19090
+
+spring:
+  datasource:
+    url: jdbc:h2:file:/home/jslim/Work/oauth-jwt-repository;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    platform: h2
+    username: sa
+    password:
+    initialization-mode: embedded
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value:
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm3yhF0qknbb9HCMCzogE
+          JW+wRCrSNBIayYuSRAohWmb/mpxTWBCZzqsnKn8rDv48ZpBg2rKJEz8Uw0eqhmVk
+          bgRf9rnmcdJ27+Zdq/jT7ICAYhWIwN+KvcQHi9mBEyuWdBNIRVgfi1rH6Np+uRge
+          hfSY3eLOJVzejU+kqfUx0WviLRFnLYGYmf/yrorogEkPYTGgUW3rDESjx0Cb/tSP
+          6vad12YuGxqOqap6JYSler0GR+08EoQx8TxR+oafs2fR7E0w/AMg3YQoVMKzl256
+          zRypKgaIoPr4u7TK14kSDQTNbQolAfkN3smmJYCZ5P2v3d4TdJK3BuaBVNvQxF8F
+          rwIDAQAB
+          -----END PUBLIC KEY-----
