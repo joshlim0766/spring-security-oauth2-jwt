@@ -1,5 +1,6 @@
 package josh0766.oauth2jwtexample.service;
 
+import josh0766.oauth2jwtexample.annotation.Authorization;
 import josh0766.oauth2jwtexample.controller.dto.LoginResponse;
 import josh0766.oauth2jwtexample.controller.dto.ResetTokenResponse;
 import josh0766.oauth2jwtexample.controller.dto.SingupResponse;
@@ -133,7 +134,10 @@ public class UserService {
 
         log.info("DEBUG : " + token.toString() + ", " + token.getValue());
 
-        SingupResponse response = null;
+        SingupResponse response = new SingupResponse();
+
+        response.setAccessToken(token.getValue());
+        response.setRefreshToken(token.getRefreshToken().getValue());
 
         return response;
     }
@@ -152,7 +156,8 @@ public class UserService {
         return response;
     }
 
-    public ResetTokenResponse resetToken (String authorization) {
+    public ResetTokenResponse resetToken (@Authorization String authorization) {
+        log.info("TEST : " + authorization);
         ResetTokenResponse response = null;
 
         return response;

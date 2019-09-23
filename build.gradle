@@ -8,6 +8,12 @@ group = 'josh0766'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-parameters"
+    }
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -23,6 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.8.RELEASE'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'

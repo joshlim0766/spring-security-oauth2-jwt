@@ -50,13 +50,10 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure (HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .httpBasic().disable()
-                .csrf().disable()
-                .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
+                    .antMatchers("/api/v1/login").permitAll()
+                    .antMatchers("/api/v1/signup").permitAll()
                     .antMatchers("/api/v1/test").hasAnyRole("ADMIN", "USER");
     }
 

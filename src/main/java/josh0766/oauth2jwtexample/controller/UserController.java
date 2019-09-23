@@ -48,8 +48,8 @@ public class UserController {
             value = "/reset",
             produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}
     )
-    public ResetTokenResponse resetToken (HttpServletRequest request) {
-        return null;
+    public ResetTokenResponse resetToken (@RequestHeader(value = "Authorization") String authorization) {
+        return userService.resetToken(authorization);
     }
 
 }
