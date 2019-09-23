@@ -7,7 +7,7 @@ $('#signup').on('submit', (e) => {
         type: 'POST',
         url : '/api/v1/signup',
         data : {
-            'client_id' : $('#signup_client_id').val(),
+            'client_id' : $('#client_id').val(),
             'user_name' : $('#signup_user_name').val(),
             'password' : $('#signup_password').val()
         }
