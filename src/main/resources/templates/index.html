@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <!-- 가입/로그인 폼 -->
+    <div class="container">
+        <div class="row">
+            <!-- 회원 가입 폼 -->
+            <div class="col">
+                <form id="signup" name="signup">
+                    <div class="form-group">
+                        User name :
+                        <input type="text" class="form-control" id="signup_user_name" name="signup_user_name" />
+                    </div>
+                    <div class="form-group">
+                        Password :
+                        <input type="password" class="form-control input-group-sm" id="signup_password" name="signup_password" />
+                    </div>
+                    <div class="form-group">
+                        <br/>
+                        <button type="submit" class="btn btn-block btn-outline-success btn-sm">Sign Up</button>
+                    </div>
+                    <div>
+                        <input type="hidden" id="signup_client_id" name="signup_client_id" value="client1" />
+                    </div>
+                </form>
+            </div>
+            <!-- 로그인 폼 -->
+            <div class="col" id="signin_form">
+                <form id="signin" name="signin">
+                    <div class="form-group">
+                        User name :
+                        <input type="text" class="form-control" id="signin_user_name" name="signin_user_name" />
+                    </div>
+                    <div class="form-group">
+                        Password :
+                        <input type="password" class="form-control input-group-sm" id="signin_password" name="signin_password" />
+                    </div>
+                    <div class="form-group">
+                        <br/>
+                        <button type="submit" class="btn btn-block btn-outline-success btn-sm">Sign In</button>
+                    </div>
+                    <div>
+                        <input type="hidden" id="signin_client_id" name="signin_client_id" value="client1" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" th:src="@{/script/api.js}"></script>
+</body>
+</html>
